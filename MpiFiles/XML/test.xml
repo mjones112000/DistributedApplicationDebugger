@@ -1,0 +1,14 @@
+<?xml version="1.0" ?> 
+<MPI_Send rank="1" dateTime="9/23/2011 5:11:44 PM">  
+  <buf>Hello World</buf> 
+  <count>11</count> 
+  <datatype>MPI_Int</datatype> 
+  <dest>2</dest> 
+  <tag>2</tag> 
+  <MPI_Comm>MPI_ALL</MPI_Comm> 
+  <name>Mike Jones</name> 
+  <adddress>192 Broken Putter Way</address> 
+  <city>Las Vegas</city> 
+  <state>Wisconsin</state> 
+  <zipcode>89148</zipcode> 
+</MPI_Send>

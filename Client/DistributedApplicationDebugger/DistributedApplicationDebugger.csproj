@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3B105F4-592C-4221-8087-BB84B2A6403F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DistributedApplicationDebugger</RootNamespace>
+    <AssemblyName>DistributedApplicationDebugger</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiffieHellman">
+      <HintPath>.\DiffieHellman.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.Mentalis.Security">
+      <HintPath>.\Org.Mentalis.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tamir.SharpSSH">
+      <HintPath>.\Tamir.SharpSSH.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\DebuggerCommand.cs" />
+    <Compile Include="Communication\BufferValue.cs" />
+    <Compile Include="Communication\MatchedState.cs" />
+    <Compile Include="Communication\MessageReadEventArgs.cs" />
+    <Compile Include="Communication\MPICommands\IMessageCommand.cs" />
+    <Compile Include="Communication\MPICommands\MPICommand.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Any_Int.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Barrier.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Comm_Rank.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Comm_Size.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Finalize.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Init.cs" />
+    <Compile Include="Communication\MPICommands\MPI_IProbe.cs" />
+    <Compile Include="Communication\MPICommands\MPI_IRecv.cs" />
+    <Compile Include="Communication\MPICommands\MPI_ISend.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Probe.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Recv.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Send.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Status.cs" />
+    <Compile Include="Communication\MPICommands\MPI_Wait.cs" />
+    <Compile Include="Communication\NodeUpdateData.cs" />
+    <Compile Include="Communication\Pipe.cs" />
+    <Compile Include="Communication\PlaybackMode.cs" />
+    <Compile Include="Communication\Protocal.cs" />
+    <Compile Include="Communication\StreamDataWrapper.cs" />
+    <Compile Include="EventArgs\BufferRequestEventArgs.cs" />
+    <Compile Include="EventArgs\GdbRequestEventArgs.cs" />
+    <Compile Include="EventArgs\ItemEventArgs.cs" />
+    <Compile Include="EventArgs\SSHCommpleteEventArgs.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="MVP\Presenters\MainFormPresenter.cs" />
+    <Compile Include="MVP\Views\ConsolePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\ConsolePanel.Designer.cs">
+      <DependentUpon>ConsolePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\MainFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\MainFormView.Designer.cs">
+      <DependentUpon>MainFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\MessagesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\MessagesPanel.Designer.cs">
+      <DependentUpon>MessagesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\MPIPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\MPIPanel.Designer.cs">
+      <DependentUpon>MPIPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\NodePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\NodePanel.Designer.cs">
+      <DependentUpon>NodePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\NodePanelHost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\NodePanelHost.Designer.cs">
+      <DependentUpon>NodePanelHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\RemoteConnectionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\RemoteConnectionsPanel.Designer.cs">
+      <DependentUpon>RemoteConnectionsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVP\Views\SettingsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVP\Views\SettingsView.Designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RedrawToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RedrawToolStripSplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Settings\BindingConverter.cs" />
+    <Compile Include="Settings\SessionInfo.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="SSH\SSHConfiguration.cs" />
+    <Compile Include="SSH\SSHManager.cs" />
+    <Compile Include="SSH\Utilities.cs" />
+    <EmbeddedResource Include="MVP\Views\ConsolePanel.resx">
+      <DependentUpon>ConsolePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\MainFormView.resx">
+      <DependentUpon>MainFormView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\MessagesPanel.resx">
+      <DependentUpon>MessagesPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\MPIPanel.resx">
+      <DependentUpon>MPIPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\NodePanel.resx">
+      <DependentUpon>NodePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\NodePanelHost.resx">
+      <DependentUpon>NodePanelHost.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\RemoteConnectionsPanel.resx">
+      <DependentUpon>RemoteConnectionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVP\Views\SettingsView.resx">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world24.bmp" />
+    <None Include="Images\clipboard.png" />
+    <None Include="Images\Record.png" />
+    <None Include="Images\ArrowDown.png" />
+    <None Include="Images\BugYellow.png" />
+    <None Include="Images\Cancel.png" />
+    <None Include="Images\CircleGreen.png" />
+    <None Include="Images\CircleGrey.png" />
+    <None Include="Images\CircleRed.png" />
+    <None Include="Images\CircleYellow.png" />
+    <None Include="Images\Console.png" />
+    <None Include="Images\Exchange.png" />
+    <None Include="Images\Play.png" />
+    <None Include="Images\Repeat.png" />
+    <None Include="Images\Robot.png" />
+    <None Include="Images\Connection.png" />
+    <None Include="Images\Minimize.png" />
+    <None Include="Images\SquareBlue.png" />
+    <None Include="Images\SquareGray.png" />
+    <None Include="Images\ArrowUp.png" />
+    <Content Include="Images\Add.png" />
+    <Content Include="Images\BlueDownArrow.png" />
+    <Content Include="Images\BlueUpArrow.png" />
+    <None Include="Images\link-break-icon16.png" />
+    <Content Include="Images\CircleBlack.png" />
+    <Content Include="Images\CircleBlue.png" />
+    <Content Include="Images\Circle_Blue.png" />
+    <Content Include="Images\Circle_Green.png" />
+    <Content Include="Images\Circle_Grey.png" />
+    <Content Include="Images\Circle_Orange.png" />
+    <Content Include="Images\Circle_Red.png" />
+    <Content Include="Images\Circle_Yellow.png" />
+    <None Include="Images\handshake.ico" />
+    <None Include="Images\gear_blue.ico" />
+    <None Include="Images\gear.png" />
+    <None Include="Images\DebuggerEnabled.png" />
+    <None Include="Images\DebuggerDisabled.png" />
+    <None Include="Images\Invalid.png" />
+    <Content Include="Images\Minus.png" />
+    <None Include="Resources\data_delete.ico" />
+    <None Include="Resources\break.png" />
+    <None Include="Resources\link_break.png" />
+    <None Include="Resources\refresh.ico" />
+    <None Include="Images\Ok.png" />
+    <None Include="Images\Question.png" />
+    <None Include="Images\Warning.png" />
+    <None Include="Images\tableSearch.png" />
+    <None Include="Images\tableHide.png" />
+    <None Include="Resources\text_view.ico" />
+    <None Include="Images\SplitConsole.png" />
+    <Content Include="Resources\world24.png" />
+    <None Include="Resources\clipboard.ico" />
+    <Content Include="Resources\redo.ico" />
+    <None Include="Resources\redo1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_square_grey.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+http://askubuntu.com/questions/41629/after-upgrade-gdb-wont-attach-to-process
+
+
+
+In Maverick Meerkat (10.10) Ubuntu introduced a patch to disallow ptracing of non-child processes by non-root users - ie. only a process which is a parent of another process can ptrace it for normal users - whilst root can still ptrace every process. Hence why you can use gdb to attach via sudo still.
+
+You can temporarily disable this restriction (and revert to the old behaviour allowing your user to ptrace (gdb) any of their other processes) by doing:
+
+echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+To permanently allow it edit /etc/sysctl.d/10-ptrace.conf and change the line:
+
+kernel.yama.ptrace_scope = 1
+To read
+
+kernel.yama.ptrace_scope = 0
+For some background on why this change was made, see the Ubuntu wiki

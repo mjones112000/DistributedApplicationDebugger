@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SettingsManager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <NodeCount>2</NodeCount>
+  <HostFile />
+  <ExecutableName>test</ExecutableName>
+  <SessionName>Testing</SessionName>
+  <Params>1</Params>
+  <IsConnectionInfoVisible>true</IsConnectionInfoVisible>
+  <SSHConfigurations>
+    <SSHConfiguration>
+      <RemoteComputer>java.cs.unlv.edu</RemoteComputer>
+      <UserName>mjones11</UserName>
+      <TransferDirectory>bridge</TransferDirectory>
+      <ConnectionPort>20000</ConnectionPort>
+    </SSHConfiguration>
+    <SSHConfiguration>
+      <RemoteComputer>cortex.cs.unlv.edu</RemoteComputer>
+      <UserName>mjones11</UserName>
+      <TransferDirectory>callCenter</TransferDirectory>
+      <ConnectionPort>20000</ConnectionPort>
+    </SSHConfiguration>
+  </SSHConfigurations>
+  <SelectedConfiguration>
+    <RemoteComputer>java.cs.unlv.edu</RemoteComputer>
+    <UserName>mjones11</UserName>
+    <TransferDirectory>bridge</TransferDirectory>
+    <ConnectionPort>20000</ConnectionPort>
+  </SelectedConfiguration>
+  <SOHReplacement>*SOH*</SOHReplacement>
+  <BARReplacement>*BAR*</BARReplacement>
+  <EOTReplacement>*EOT*</EOTReplacement>
+</SettingsManager>
