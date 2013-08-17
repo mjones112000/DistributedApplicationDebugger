@@ -1,0 +1,9 @@
+C:\SVN\Client\TestDataGenerator\bin\Debug\TestDataGenerator.exe
+C:\SVN\Client\TestDataGenerator\bin\Debug\TestDataGenerator.pdb
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\TestDataGenerator.Form1.resources
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\TestDataGenerator.Properties.Resources.resources
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\TestDataGenerator.exe
+C:\SVN\Client\TestDataGenerator\obj\x86\Debug\TestDataGenerator.pdb
