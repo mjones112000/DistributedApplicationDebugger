@@ -48,6 +48,7 @@ The -DMPIDEBUG token means that when the header information from the mpi.h file 
 debug.h and mpidebug.h files will be included as well.  These files
  redirect the calls to the MPI library to intermediary libraries prefaced with underscores.  
 
+5. When running the GUI make sure that the transfer directory is set to ./callCenter in the configuration part.
 
 The Makefile included with the MPI runtime files.
 
