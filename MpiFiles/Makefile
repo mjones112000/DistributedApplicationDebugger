@@ -3,6 +3,9 @@
 #	 make run FILE=test-file-name DATA=data-file-name
 
 all:
+	mkdir obj
+	mkdir bin
+	mkdir XML/obj
 	gcc -Wall -O3 -Wno-unused -c -o XML/obj/xmlDoc.o XML/xmlDoc.c
 	gcc -Wall -O3 -Wno-unused -c -o XML/obj/xmlReader.o XML/xmlReader.c
 	gcc -Wall -O3 -Wno-unused -c -o XML/obj/xmlWriter.o XML/xmlWriter.c
